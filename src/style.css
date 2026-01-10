@@ -14,6 +14,11 @@ body {
   text-align: center;
 }
 
+.timer{
+   padding: 12px 24px;
+  font-size: 18px;
+}
+
 .card {
   width: 200px;
   height: 300px;
