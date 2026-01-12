@@ -13,6 +13,8 @@ window.onload = function() {
 
   const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 
+  const cardElement = document.getElementById("card");
+
   let secondsLeft = 10;
   const countdownElement = document.getElementById("countdown");
 
@@ -35,7 +37,19 @@ window.onload = function() {
     secondsLeft = 10;
     if (countdownElement) countdownElement.textContent = secondsLeft;
   }
+  
+  function updateCardSize() {
+    const widthInput = document.getElementById("card-width").value;
+    const heightInput = document.getElementById("card-height").value;
 
+    const newWidth = parseInt(widthInput) || 200;
+    const newHeight = parseInt(heightInput) || 300;
+
+    cardElement.style.width = newWidth + "px";
+    cardElement.style.height = newHeight + "px";
+
+  }
+  
   function updateCountdown() {
     secondsLeft--;
     if (countdownElement) {
@@ -50,6 +64,9 @@ window.onload = function() {
   setInterval(drawRandomCard, 10000);
 
   drawRandomCard();
+  updateCardSize();
 
   document.getElementById("new-card").addEventListener("click", drawRandomCard);
+  document.getElementById("apply-size").addEventListener("click", updateCardSize);
+
 };

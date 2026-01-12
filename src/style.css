@@ -15,8 +15,14 @@ body {
 }
 
 .timer{
-   padding: 12px 24px;
+  padding: 12px 24px;
   font-size: 18px;
+}
+
+#apply-size {
+  padding: 6px 12px;
+  background-color: #2196F3;
+  margin-bottom: 10px;
 }
 
 .card {
